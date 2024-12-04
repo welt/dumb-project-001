@@ -1,10 +1,10 @@
+import localDebug from './_modules/localDebug.js';
 import messages from "./_modules/messages.js";
 import ToggleDarkMode from "./_lib/toggleDarkMode.js";
 import DumpToScreen from './_lib/dumpToScreen';
 import createScreenLogger from './_lib/screenLogger';
 
 const screenLogger = createScreenLogger(DumpToScreen, 'message-panel');
-screenLogger();
 
 import CarbonReporter from "./_components/carbonReporter.js";
 import GitHubReporter from "./_components/gitHubReporter.js";
@@ -26,6 +26,8 @@ function initializeThemeSwitch() {
 }
 
 function init() {
+  localDebug.refresh();
+  screenLogger();
   defineCustomElements();
   messages.hello();
   initializeThemeSwitch();

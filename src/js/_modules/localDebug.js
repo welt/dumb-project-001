@@ -9,8 +9,8 @@ export default {
    * @listens refresh
    */
   refresh: () => {
-    document.addEventListener("refresh", (evt) => {
-      console.log("Refreshing sources...", evt.detail);
+    document.addEventListener("refresh", () => {
+      console.log(">>>> Refreshing sources...");
     });
   },
 };

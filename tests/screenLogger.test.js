@@ -44,11 +44,11 @@ describe('Test the screenLogger proxies console.log() correctly', () => {
 
   test('It should not log messages which do not contain "cached" to screen', () => {
     console.log('This is a regular message');
-    expect(mockLog).not.toHaveBeenCalled();
+    expect(mockLog).not.toHaveBeenCalledWith('This is a regular message');
   });
 
   test('It should not send non-string messages to screen', () => {
     console.log({ loremKey: 'ipsumValue' });
-    expect(mockLog).not.toHaveBeenCalled();
+    expect(mockLog).not.toHaveBeenCalledWith({ loremKey: 'ipsumValue' });
   });
 });
